@@ -4,13 +4,10 @@ public class Main {
         int x;
         int y;
         x = 64;
-        y = 7;
+        y = 0;
         boolean t = true;
         boolean s = false;
         int result = x / y;
-        if( y == 0){
-            System.out.println("Cannot be divided by 0");
-        }
         if (x == y * result) {
             System.out.println(t);
         }else{
@@ -24,6 +21,7 @@ public class Main {
         double mijin2 = (d+e+f)/3D;
         int mijin = (int) ((mijin1 + mijin2)/2);
         System.out.println(mijin);
+
 
     }
 }
