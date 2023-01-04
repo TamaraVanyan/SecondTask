@@ -6,8 +6,11 @@ public class DecimalPart {
         System.out.println("a tvi tasnordakan masn e " + decimalPart);
         // 2rd tarberak
         int x = (int)a;
-        double result  = a - (double) x;
+        double result  = a - x;
         System.out.println(result);
+        if(false){
+            System.out.println("hu");
+        }
 
         //gitem vor sran hly shat ka bayc grel em :D______
         String str = Double.toString(a);
@@ -15,4 +18,3 @@ public class DecimalPart {
         System.out.println("0." + parts[1]);
     }
 }
-origin
