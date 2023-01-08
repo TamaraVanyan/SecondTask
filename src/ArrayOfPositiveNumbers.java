@@ -24,10 +24,10 @@ public class ArrayOfPositiveNumbers {
             output[outIndex] = input[4];
             outIndex++;
         }
-        System.out.println(output[0]);
-        System.out.println(output[1]);
-        System.out.println(output[2]);
-        System.out.println(output[3]);
-        System.out.println(output[4]);
+        System.out.println("Input array members: " + input[0] + ", " + input[1] + ", " + input[2] + ", " +
+                input[3] + ", " + input[4] + " ");
+        System.out.println("Output array members: " + output[0] + ", " + output[1] + ", " + output[2] + ", " +
+                output[3] + ", " + output[4]);
+
     }
 }
