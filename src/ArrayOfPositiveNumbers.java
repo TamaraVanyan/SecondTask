@@ -28,6 +28,5 @@ public class ArrayOfPositiveNumbers {
                 input[3] + ", " + input[4] + " ");
         System.out.println("Output array members: " + output[0] + ", " + output[1] + ", " + output[2] + ", " +
                 output[3] + ", " + output[4]);
-
     }
 }

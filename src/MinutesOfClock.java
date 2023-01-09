@@ -7,9 +7,6 @@ public class MinutesOfClock {
         sc.close();
         if(minutePosition > 0 && minutePosition <12) {
             System.out.println("It's " + minutePosition * 5 + " minute");
-            if(minutePosition == 12){
-                System.out.println("It is round hour");
-            }
         }
         if(minutePosition == 12){
             System.out.println("It is round hour");
