@@ -10,6 +10,7 @@ public class FindLetterInArray {
         while (i < array.length && index == 0) {
             if (array[i] == letter) {
                 index = i;
+                break;
             }
             i++;
         }
