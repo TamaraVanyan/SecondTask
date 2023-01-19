@@ -1,3 +1,4 @@
+package OldTasks;
 public class PositiveNumbersOfArr {
         public static void main(String[] args) {
             int[] mixedNumbers = {-77, 4, -69, 2, 57, 8, -3};

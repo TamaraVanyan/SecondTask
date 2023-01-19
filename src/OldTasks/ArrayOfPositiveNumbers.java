@@ -1,3 +1,4 @@
+package OldTasks;
 public class ArrayOfPositiveNumbers {
     public static void main(String[] args) {
         double[] input = {10, -23.5, -8.7, 4.9, 15.07};

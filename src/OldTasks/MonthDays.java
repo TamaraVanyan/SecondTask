@@ -1,3 +1,4 @@
+package OldTasks;
 import java.util.Scanner;
 public class MonthDays {
     public static void main(String[] args) {

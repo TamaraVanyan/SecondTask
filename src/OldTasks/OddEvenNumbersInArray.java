@@ -1,3 +1,4 @@
+package OldTasks;
 public class OddEvenNumbersInArray {
     public static void main(String[] args) {
         int[] arr1 = {94, 63, 48, 69, 5, 0};

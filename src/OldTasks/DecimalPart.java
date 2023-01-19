@@ -1,3 +1,4 @@
+package OldTasks;
 public class DecimalPart {
     public static void main(String[] args) {
         double a = 789.123;
