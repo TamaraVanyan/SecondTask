@@ -1,23 +1,57 @@
 public class Ankap {
     public static void main(String[] args) {
-        int[] arr = {4, 5, 1, 888};
-//        int c = 0;
-//        for (int i = 0; i < arr.length; i++) {
-//            if(arr[i] > 0){
-//                c++;
-//            }
-//
+
+//        int a = 5;
+//        int faktorial = 1;
+//        while (a > 1) {
+//            faktorial *= a;
+//            a--;
 //        }
-//        System.out.println(c);
-//        short a = 7;
-//        short b = 1;
-//        long c = a +b;
-//        System.out.println(arr[3] << 1);
-        int a = 8;
-        int b = 7;
-        if ((b++ > 6) || (a & b ) >= 0 ){
-            System.out.println(a + b);
+//        System.out.println(faktorial);
+
+//        int[] array = {1, 2, 3, 4, 6, 7, 8, 9, 10};
+//        int missing = 0;
+//        for (int i = 0; i < array.length -1; i++) {
+//            if (array[i+1] - array[i] != 1){
+//                missing = array[i] + 1;
+//                break;
+//            }
+//        }
+//        System.out.println(missing);
+
+//        int[] ansortedArr = {10, 15, 50, 3, 2, 0};
+//        int min = ansortedArr[0];
+//        for (int i = 0; i < ansortedArr.length; i++) {
+//            if(ansortedArr[i] < min){
+//                min = ansortedArr[i];
+//            }
+//        }
+//        System.out.println(min);
+
+//        int[] mixedArray = {10, 5, 7, 8, 1, 14, 3, 9, 12, 6};
+//        int num = 15;
+//        for (int i = 0; i < mixedArray.length - 1; i++) {
+//            for (int j = 1; j < mixedArray.length; j++) {
+//                if(mixedArray[i] + mixedArray[j] == num){
+//                    System.out.println("Pair found at index " + i + " and " + j);
+//                    System.out.println("(" + mixedArray[i] + ", " + mixedArray[j] + ")");
+//                }
+//            }
+//        }
+
+        int[] array = {12, 7, 15, -3, 12, 8};
+        int index = 0;
+        int sum = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+           if(array[i] >= 0){
+               index++;
+           }
         }
-        System.out.println(a + b);
+        for (int i = index; i < array.length; i++) {
+            sum += array[i];
+        }
+        System.out.println(sum);
+
+
     }
 }
