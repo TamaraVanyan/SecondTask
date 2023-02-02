@@ -1,36 +1,45 @@
 package DegreeOfNumber;
+
 public class DegreeOfNumber {
+
     public static void main(String[] args) {
         int a = 1;
         int b = 1;
-        int result1 = power(2, 5);
-        System.out.println(result1);
-        int result2 = power(-2, 5);
-        System.out.println(result2);
-        int result3 = power(2, -5);
-        System.out.println(result3);
-        int result4 = power(22, 45);
-        System.out.println(result4);
-        int result5 = power(5, 4);
-        System.out.println(result5);
+        double power = power(5, -2);
+
+        if (power == -2) {
+            System.out.println("A is negative number");
+        } else if (power == -1) {
+            System.out.println("The abs of a is greater than 10");
+        } else {
+            System.out.println(power);
+        }
     }
 
-    public static int power(int a, int b) {
-        if (a <= 0 || b < 0) {
-            System.out.print("a = " + a + " and " + "b = " + b + " must be positive. ");
-            return -2;
-        }
-        if (Math.abs(a) > 10 || Math.abs(b) > 10) {
-            System.out.print("b must be less than or equal to 10. ");
+    static double power(int a, int b) {
+
+        if (abs(a) > 10 || abs(b) > 10) {
             return -1;
         }
-        int result = 1;
-        if(a > 0 && a < 10 && b >= 0 && b <= 10) {
-            for (int i = 0; i < b; i++) {
-                result *= a;
-            }
-            System.out.print("The power " + b + " of " + a + " number is: ");
+        if (a <= 0) {
+            return -2;
+        }
+
+        double result = 1;
+
+        for (int i = 1; i <= abs(b); i++) {
+            result = result * a;
+        }
+        if (b < 0) {
+            return 1 / result;
         }
         return result;
+    }
+
+    static int abs(int c) {
+        if (c < 0) {
+            return c * -1;
+        }
+        return c;
     }
 }

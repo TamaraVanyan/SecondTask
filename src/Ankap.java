@@ -39,19 +39,41 @@ public class Ankap {
 //            }
 //        }
 
-        int[] array = {12, 7, 15, -3, 12, 8};
-        int index = 0;
-        int sum = 0;
-        for (int i = 0; i < array.length - 1; i++) {
-           if(array[i] >= 0){
-               index++;
-           }
-        }
-        for (int i = index; i < array.length; i++) {
-            sum += array[i];
-        }
-        System.out.println(sum);
+//        int[] array = {12, 7, 15, -3, 12, 8};
+//        int index = 0;
+//        int sum = 0;
+//        for (int i = 0; i < array.length - 1; i++) {
+//           if(array[i] >= 0){
+//               index++;
+//           }
+//        }
+//        for (int i = index; i < array.length; i++) {
+//            sum += array[i];
+//        }
+//        System.out.println(sum);
 
+        int inputNumber = 153;
+        int length = 0;
+        int current = 0;
+        int resultSum = 0;
 
+        while (inputNumber > 0) {
+            current = inputNumber % 10;
+            length++;
+            inputNumber /= 10;
+        }
+        inputNumber = 153;
+        while (inputNumber > 0) {
+                current = inputNumber % 10;
+
+                int resultMultypl = 1;
+                while (length > 0) {
+                    resultMultypl *= current;
+                }
+                resultSum += resultMultypl;
+                inputNumber /= 10;
+            }
+
+        System.out.println(resultSum);
     }
 }
