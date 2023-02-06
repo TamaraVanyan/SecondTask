@@ -1,5 +1,5 @@
 public class Ankap {
-    public static void main(String[] args) {
+   // public static void main(String[] args) {
 
 //        int a = 5;
 //        int faktorial = 1;
@@ -52,28 +52,81 @@ public class Ankap {
 //        }
 //        System.out.println(sum);
 
-        int inputNumber = 153;
-        int length = 0;
-        int current = 0;
-        int resultSum = 0;
+//        int inputNumber = 153;
+//        int length = 0;
+//        int current = 0;
+//        int resultSum = 0;
+//
+//        while (inputNumber > 0) {
+//            current = inputNumber % 10;
+//            length++;
+//            inputNumber /= 10;
+//        }
+//        inputNumber = 153;
+//        while (inputNumber > 0) {
+//                current = inputNumber % 10;
+//
+//                int resultMultypl = 1;
+//                while (length > 0) {
+//                    resultMultypl *= current;
+//                }
+//                resultSum += resultMultypl;
+//                inputNumber /= 10;
+//            }
+//
+//        System.out.println(resultSum);
+//    }
+//}
+//        int inputNumber = 153;
+//        int length = 0;
+//        int current = 0;
+//        int resultSum = 0;
+//
+//        while (inputNumber > 0) {
+//            current = inputNumber % 10;
+//            length++;
+//            inputNumber /= 10;
+//        }
+//        inputNumber = 153;
+//        while (inputNumber > 0) {
+//            current = inputNumber % 10;
+//
+//            int resultMultypl = 1;
+//            while (length > 0) {
+//                resultMultypl *= current;
+//            }
+//            resultSum += resultMultypl;
+//            inputNumber /= 10;
+//        }
+//
+//        System.out.println(resultSum);
+//    }
+    public static void main(String[] args) {
+        String text = "String is not primitive type, string is type word, string";
+        System.out.println(wordCount(text, "type"));
 
-        while (inputNumber > 0) {
-            current = inputNumber % 10;
-            length++;
-            inputNumber /= 10;
-        }
-        inputNumber = 153;
-        while (inputNumber > 0) {
-                current = inputNumber % 10;
-
-                int resultMultypl = 1;
-                while (length > 0) {
-                    resultMultypl *= current;
-                }
-                resultSum += resultMultypl;
-                inputNumber /= 10;
-            }
-
-        System.out.println(resultSum);
     }
+
+    public static int wordCount(String text, String word) {
+        if (text.isEmpty() || word.isEmpty()) {
+            return -2;
+        }
+        int count = text.split(word, -1).length - 1;
+        if (count == 0) {
+            return -1;
+        }
+        return count;
+    }
+    public static int wordCount(String text) {
+        if (text.isEmpty()) {
+            return -2;
+        }
+
+        int count = text.split("string", -1).length - 1;
+        if (count == 0) {
+            return -1;
+        }
+        return count;
+    }
+
 }
