@@ -6,6 +6,8 @@ public class RepeatedWords {
         System.out.println(wordCount("some text", "bla"));
         System.out.println(wordCount("some text", ""));
         System.out.println(stringWordCount("string word repeated three time in this string type sentance like string"));
+        System.out.println(stringWordCount(""));
+        System.out.println(stringWordCount("some random text"));
     }
     public static int wordCount(String text, String word) {
         if (text.isEmpty() || word.isEmpty()) {
@@ -22,7 +24,7 @@ public class RepeatedWords {
             return -2;
         }
 
-        int count = text.split("string").length;
+        int count = text.split("string").length - 1;
         if (count == 0) {
             return -1;
         }
