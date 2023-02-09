@@ -2,7 +2,7 @@ package StringMethod;
 
 public class RepeatedWords {
     public static void main(String[] args) {
-        System.out.println(wordCount("In this text this repeated two time this this", "this"));
+        System.out.println(wordCount("some some text", "some"));
         System.out.println(wordCount("some text", "bla"));
         System.out.println(wordCount("some text", ""));
         System.out.println(wordCount("string word repeated three time in this string type sentance like string"));
