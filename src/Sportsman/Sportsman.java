@@ -64,6 +64,6 @@ public class Sportsman {
     }
 
     public double collectedPoints() {
-        return (competition1 + competition2 + competition3 + competition4) / 4;
+        return (competition1 + competition2 + competition3 + competition4) / 4.0;
     }
 }

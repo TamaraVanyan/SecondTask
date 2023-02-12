@@ -10,9 +10,6 @@ public class Gas {
     public Gas(int electricEyes, int gasEyes) {
         setElectricEyes(electricEyes);
         setGasEyes(gasEyes);
-        this.electricOn = false;
-        this.gasOn = false;
-        this.totalEnergy = 0;
     }
 
     public boolean isElectricOn() {
