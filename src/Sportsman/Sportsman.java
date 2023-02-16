@@ -1,69 +1,56 @@
 package Sportsman;
 
 public class Sportsman {
-    int competition1;
-    int competition2;
-    int competition3;
-    int competition4;
+    private int[] competitionScores;
 
-    Sportsman(int competition1, int competition2, int competition3, int competition4) {
-        setCompetition1(competition1);
-        setCompetition2(competition2);
-        setCompetition3(competition3);
-        setCompetition4(competition4);
+    public Sportsman(int... competitionScores) {
+        this.competitionScores = competitionScores;
+        validateScores();
     }
 
-    public int getCompetition1() {
-        return competition1;
+    public int[] getCompetitionScores() {
+        return competitionScores;
     }
 
-    public void setCompetition1(int competition1) {
-        if(competition1 >= 50 && competition1 <= 100){
-            this.competition1 = competition1;
-        }else {
-            System.out.println("Invalid points, it should be from 50 to 100");
-        }
-    }
-
-    public int getCompetition2() {
-        return competition2;
-    }
-
-    public void setCompetition2(int competition2) {
-        if(competition2 >= 50 && competition2 <= 100){
-            this.competition2 = competition2;
-        }else {
-            System.out.println("Invalid points, it should be from 50 to 100");
-        }
-    }
-
-    public int getCompetition3() {
-        return competition3;
-    }
-
-    public void setCompetition3(int competition3) {
-        if(competition3 >= 50 && competition3 <= 100){
-            this.competition3 = competition3;
-        }else {
-            System.out.println("Invalid points, it should be from 50 to 100");
-            System.exit(0);
-        }
-    }
-
-    public int getCompetition4() {
-        return competition4;
-    }
-
-    public void setCompetition4(int competition4) {
-        if(competition4 >= 50 && competition4 <= 100){
-            this.competition4 = competition4;
-        }else {
-            System.out.println("Invalid points, it should be from 50 to 100");
-            System.exit(0);
-        }
+    public void setCompetitionScores(int... competitionScores) {
+        this.competitionScores = competitionScores;
+        validateScores();
     }
 
     public double collectedPoints() {
-        return (competition1 + competition2 + competition3 + competition4) / 4.0;
+        return calculateAveragePoints(competitionScores);
+    }
+
+    private void validateScores() {
+        for (int i = 0; i < competitionScores.length; i++) {
+            int score = competitionScores[i];
+            if (score < 50 || score > 100) {
+                System.out.println("Invalid score for competition it should be from 50 to 100");
+                System.exit(1);
+            }
+        }
+    }
+
+    private double calculateAveragePoints(int[] scores) {
+        int sum = 0;
+        for (int i = 0; i < scores.length; i++) {
+            sum += scores[i];
+        }
+        return sum / (double) scores.length;
+    }
+
+    public int compareAverages(Sportsman other) {
+        double avg1 = collectedPoints();
+        double avg2 = other.collectedPoints();
+        if (avg1 > avg2) {
+            System.out.println("Sportsman 1 has a higher average score than Sportsman 2.");
+            return 1;
+        } else if (avg1 < avg2) {
+            System.out.println("Sportsman 2 has a higher average score than Sportsman 1.");
+            return -1;
+        } else {
+            System.out.println("Sportsman 1 and Sportsman 2 have the same average score.");
+            return 0;
+        }
     }
 }

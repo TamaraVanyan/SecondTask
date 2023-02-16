@@ -3,8 +3,8 @@ package Kitchen;
 public class Gas {
     private int electricEyes;
     private int gasEyes;
-    private boolean electricOn;
-    private boolean gasOn;
+    private boolean electricOn = false;
+    private boolean gasOn = false;
     private int totalEnergy;
 
     public Gas(int electricEyes, int gasEyes) {
@@ -37,7 +37,7 @@ public class Gas {
             this.electricEyes = electricEyes;
         } else {
             System.out.println("Invalid number of electric eyes, it should be between 1 and 3.");
-            System.exit(0);
+            System.exit(1);
         }
     }
 
@@ -50,7 +50,7 @@ public class Gas {
             this.gasEyes = gasEyes;
         } else {
             System.out.println("Invalid number of gas eyes, it should be between 3 and 5.");
-            System.exit(0);
+            System.exit(1);
         }
     }
 
