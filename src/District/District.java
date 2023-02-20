@@ -6,7 +6,12 @@ public class District {
 
     public District(Building[] buildings, int parkArea) {
         this.buildings = buildings;
-        this.parkArea = parkArea;
+        if(parkArea > 0) {
+            this.parkArea = parkArea;
+        }else{
+            System.out.println("area cannot be a negative number");
+            System.exit(5);
+        }
     }
 
     public Building[] getBuildings() {
@@ -14,13 +19,20 @@ public class District {
     }
 
     public int getParkArea() {
+        if (parkArea > 0) {
+            return parkArea;
+        } else {
+            System.out.println("Park cant have negative area");
+            System.exit(1);
+        }
         return parkArea;
     }
-    public int getUnitGardenArea() {
-        int totalNumOfHouses = 0;
+
+    public double getUnitGardenArea() {
+        double totalNumOfHouses = 0;
         for (int i = 0; i < buildings.length; i++) {
-            totalNumOfHouses += buildings[i].getNumOfTwoRoomHouses() + buildings[i].getNumOfThreeRoomHouses();
+            totalNumOfHouses += buildings[i].getNumOfTwoRoomHouses().length  + buildings[i].getNumOfThreeRoomHouses().length;
         }
-        return parkArea / totalNumOfHouses;
+        return parkArea / (double) totalNumOfHouses;
     }
 }

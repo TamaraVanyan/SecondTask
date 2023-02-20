@@ -3,14 +3,31 @@ package District;
 public class Building {
     private String name;
     private int numOfFloors;
-    private int numOfTwoRoomHouses;
-    private int numOfThreeRoomHouses;
+    private int[] numOfTwoRoomHouses;
+    private int[] numOfThreeRoomHouses;
     private String type;
 
-    public Building(String Name, int numOfFloors, int numOfTwoRoomHouses, int numOfThreeRoomHouses, String type) {
+    public Building(String name, int numOfFloors, int[] numOfTwoRoomHouses, int[] numOfThreeRoomHouses, String type) {
         this.name = name;
-        this.numOfFloors = numOfFloors;
+        if (numOfFloors < 0) {
+            System.out.println("Number of floors can't been negative");
+            System.exit(1);
+        } else {
+            this.numOfFloors = numOfFloors;
+        }
+        for (int i = 0; i < numOfTwoRoomHouses.length; i++) {
+            if (numOfTwoRoomHouses[i] <= 0) {
+                System.out.println("Number of house can't negative number");
+                System.exit(1);
+            }
+        }
         this.numOfTwoRoomHouses = numOfTwoRoomHouses;
+        for (int i = 0; i <numOfThreeRoomHouses.length; i++) {
+            if (numOfThreeRoomHouses[i] <= 0) {
+                System.out.println("Number of house can't negative number");
+                System.exit(1);
+            }
+        }
         this.numOfThreeRoomHouses = numOfThreeRoomHouses;
         this.type = type;
     }
@@ -27,12 +44,20 @@ public class Building {
         return numOfFloors;
     }
 
-    public int getNumOfTwoRoomHouses() {
+    public int[] getNumOfTwoRoomHouses() {
         return numOfTwoRoomHouses;
     }
 
-    public int getNumOfThreeRoomHouses() {
+    public void setNumOfTwoRoomHouses(int[] numOfTwoRoomHouses) {
+        this.numOfTwoRoomHouses = numOfTwoRoomHouses;
+    }
+
+    public int[] getNumOfThreeRoomHouses() {
         return numOfThreeRoomHouses;
+    }
+
+    public void setNumOfThreeRoomHouses(int[] numOfThreeRoomHouses) {
+        this.numOfThreeRoomHouses = numOfThreeRoomHouses;
     }
 
     public String getType() {
