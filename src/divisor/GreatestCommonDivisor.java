@@ -20,19 +20,29 @@ public class GreatestCommonDivisor {
     public void setArrayOfNumbers(int[] arrayOfNumbers) {
         this.arrayOfNumbers = arrayOfNumbers;
     }
+
+    public static int findMin(int[] arr) {
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
     public int findGreatestCommonDivisor() {
-        int greatcommondiv = arrayOfNumbers[0];
+        int greatcommondiv = findMin(arrayOfNumbers);
         for (int i = 1; i < arrayOfNumbers.length; i++) {
             greatcommondiv  = findGreatCommonDiv(greatcommondiv, arrayOfNumbers[i]);
         }
-        return greatcommondiv ;
+        return greatcommondiv;
     }
     private int findGreatCommonDiv(int a, int b) {
-        int next;
+        int current;
         while (b != 0) {
-            next = b;
+            current = b;
             b = a % b;
-            a = next;
+            a = current;
         }
         return a;
     }
