@@ -102,32 +102,75 @@ public class Ankap {
 //
 //        System.out.println(resultSum);
 //    }
+//    public static void main(String[] args) {
+//        String text = "String is not primitive type, string is type word, string";
+//        System.out.println(wordCount(text, "type"));
+//
+//    }
+//
+//    public static int wordCount(String text, String word) {
+//        if (text.isEmpty() || word.isEmpty()) {
+//            return -2;
+//        }
+//        int count = text.split(word, -1).length - 1;
+//        if (count == 0) {
+//            return -1;
+//        }
+//        return count;
+//    }
+//    public static int wordCount(String text) {
+//        if (text.isEmpty()) {
+//            return -2;
+//        }
+//
+//        int count = text.split("string", -1).length - 1;
+//        if (count == 0) {
+//            return -1;
+//        }
+//        return count;
+//    }
+
     public static void main(String[] args) {
-        String text = "String is not primitive type, string is type word, string";
-        System.out.println(wordCount(text, "type"));
+        
+        int[] arr = {5, -23, 5, 12, -23, 5, 5, 5, -23, 12, -23, 12, 5, -23};
+        int n = arr.length;
+        int n23 = 0;
+        int n5 = 0;
+        int n12 = 0;
 
-    }
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == -23) {
+                n23++;
+            }
+            if (arr[i] == 5) {
+                n5++;
+            }
+            if (arr[i] == 12) {
+                n12++;
+            }
 
-    public static int wordCount(String text, String word) {
-        if (text.isEmpty() || word.isEmpty()) {
-            return -2;
         }
-        int count = text.split(word, -1).length - 1;
-        if (count == 0) {
-            return -1;
+        int[] sortedArr = new int[n];
+        int index = 0;
+        for (int i = 0; i < n23; i++) {
+            sortedArr[index] = -23;
+            index++;
         }
-        return count;
-    }
-    public static int wordCount(String text) {
-        if (text.isEmpty()) {
-            return -2;
+        for (int i = 0; i < n5; i++) {
+            sortedArr[index] = 5;
+            index++;
+        }
+        for (int i = 0; i < n12; i++) {
+            sortedArr[index] = 12;
+            index++;
         }
 
-        int count = text.split("string", -1).length - 1;
-        if (count == 0) {
-            return -1;
+        System.out.print("{");
+        for (int i = 0; i < n; i++) {
+            System.out.print(sortedArr[i] + ", ");
+
         }
-        return count;
+        System.out.println("}");
     }
 
 }
