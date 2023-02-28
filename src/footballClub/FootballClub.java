@@ -3,7 +3,7 @@ package footballClub;
 public class FootballClub {
     private String clubName;
     private String country;
-    private static FootballPlayer[] players;
+    private FootballPlayer[] players;
 
     public FootballClub(String clubName, String country, FootballPlayer[] players) {
         this.clubName = clubName;
@@ -19,7 +19,7 @@ public class FootballClub {
         return country;
     }
 
-    public static FootballPlayer[] getPlayers() {
+    public FootballPlayer[] getPlayers() {
 
         return players;
     }

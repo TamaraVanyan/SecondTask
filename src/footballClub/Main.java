@@ -18,16 +18,16 @@ public class Main {
 
         FootballClub Goris = new FootballClub("Goris FC", "Armenia", players);
 
-        String playerName = FootballClub.getPlayers()[0].getName();
-        int playerAge = FootballClub.getPlayers()[0].getAge();
-        String playerNationality = FootballClub.getPlayers()[0].getNationality();
-        int playerNumber = FootballClub.getPlayers()[0].getNumber();
+        String playerName = Goris.getPlayers()[0].getName();
+        int playerAge = Goris.getPlayers()[0].getAge();
+        String playerNationality = Goris.getPlayers()[0].getNationality();
+        int playerNumber = Goris.getPlayers()[0].getNumber();
         System.out.println("name: " + playerName + ", age: " + playerAge + ", nationality: " + playerNationality + ", number: " + playerNumber);
 
-        String player1Name = FootballClub.getPlayers()[9].getName();
-        int player1Age = FootballClub.getPlayers()[9].getAge();
-        String player1Nationality = FootballClub.getPlayers()[9].getNationality();
-        int player1Number = FootballClub.getPlayers()[9].getNumber();
+        String player1Name = Goris.getPlayers()[9].getName();
+        int player1Age = Goris.getPlayers()[9].getAge();
+        String player1Nationality = Goris.getPlayers()[9].getNationality();
+        int player1Number = Goris.getPlayers()[9].getNumber();
         System.out.println("name: " + player1Name + ", age: " + player1Age + ", nationality: " + player1Nationality + ", number: " + player1Number);
 
     }
