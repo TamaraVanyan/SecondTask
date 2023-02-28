@@ -14,7 +14,15 @@ public class FootballPlayer {
         this.position = position;
         this.nationality = nationality;
         this.number = number;
+        if (number < 0 || number > 11) {
+            System.out.println("In football club there are 11 player");
+            System.exit(11);
+        }
         this.age = age;
+        if (age < 6 || age > 60) {
+            System.out.println("There are not players in this age");
+            System.exit(1);
+        }
     }
 
     public String getName() {
@@ -34,18 +42,10 @@ public class FootballPlayer {
     }
 
     public int getNumber() {
-        if (number < 0 || number > 11) {
-            System.out.println("In football club there are 11 player");
-            System.exit(11);
-        }
         return number;
     }
 
     public int getAge() {
-        if (age < 6 || age > 60) {
-            System.out.println("There are not players in this age");
-            System.exit(1);
-        }
         return age;
     }
 }
