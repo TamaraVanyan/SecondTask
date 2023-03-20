@@ -5,8 +5,8 @@ public class Main {
         Person person = new Person("Vazgen", "Mkhitaryan", 24, "Mozanbik", "094-45-45-05");
         Employee employee = new Employee("Anna", "Petrosyan", 25, "some street",
                 "456998", "QA engeneer", 900000);
-        Manager manager = new Manager("Ara", "Aramyan", 40, "Abovyan", "33-33-33-33",
-                "devops", 1200000, "softwere engeneering");
+        Manager manager = new Manager("Ara", "Aramyan", 4, "Abovyan", "33-33-33-33",
+                "devops", -1200000, "softwere engeneering");
 
         System.out.println("Person: " + person.getName() + " " + person.getSurname() + ", " + person.getAge() + ", "
                 + person.getAddress() + ", " + person.getPhoneNumber());

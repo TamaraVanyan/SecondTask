@@ -44,6 +44,10 @@ public class Person {
     }
 
     public void setAge(int age) {
+        if (age < 16 || age > 120) {
+            System.out.println("Age can't be this much");
+            System.exit(2);
+        }
         this.age = age;
     }
 

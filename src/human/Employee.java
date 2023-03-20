@@ -23,6 +23,10 @@ public class Employee extends Person {
     }
 
     public void setSalary(double salary) {
+        if (salary < 0) {
+            System.exit(3);
+            System.out.println("salary cant be negative");
+        }
         this.salary = salary;
     }
 }
