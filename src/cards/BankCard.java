@@ -21,13 +21,16 @@ public class BankCard {
     }
 
     public void withdrawMoney(int amount) {
-        if (balance < 0 || amount > balance){
-            System.out.println("Not enought balance");
+        if (amount > balance) {
+            System.out.println("Not enough balance");
             System.exit(2);
-        }
-        if(balance == 0){
+        } else if (balance < 0) {
+            System.out.println("Negative balance");
+            System.exit(2);
+        } else if (balance == 0) {
             System.out.println("Your balance is 0");
+        } else {
+            balance -= amount;
         }
-        balance -= amount;
     }
 }

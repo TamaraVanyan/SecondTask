@@ -13,11 +13,13 @@ public class Gold extends BankCard {
     }
 
     public void payForLunch(int billOfLunch) {
-        if (billOfLunch <= fixedAccount && fixedAccount > 0) {
+        if (billOfLunch <= fixedAccount) {
+            System.out.println("Not enought money");
+        } else if (fixedAccount < 0) {
+            System.out.println("Negative balance");
+        } else {
             fixedAccount = fixedAccount - billOfLunch;
             //System.out.println("Paid for lunch using Gold card! " + billOfLunch);
-        } else {
-            System.out.println("Not enough balance to pay for lunch.");
         }
     }
 }
