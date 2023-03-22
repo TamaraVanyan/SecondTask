@@ -2,10 +2,16 @@ package cards;
 
 public class Gold extends BankCard {
     private int fixedAccount;
+    private int bonus = 0;
 
     public Gold() {
         super("Gold");
         fixedAccount = 100000;
+        this.bonus = bonus;
+    }
+
+    public int getBonus() {
+        return bonus;
     }
 
     public int getFixedAccount() {
@@ -13,13 +19,18 @@ public class Gold extends BankCard {
     }
 
     public void payForLunch(int billOfLunch) {
-        if (billOfLunch <= fixedAccount) {
-            System.out.println("Not enought money");
-        } else if (fixedAccount < 0) {
-            System.out.println("Negative balance");
+        if (fixedAccount < billOfLunch) {
+            System.out.println("Not enough money");
+        } else if (fixedAccount <= 0) {
+            System.out.println("Zero or negative balance");
         } else {
-            fixedAccount = fixedAccount - billOfLunch;
-            //System.out.println("Paid for lunch using Gold card! " + billOfLunch);
+            fixedAccount -= billOfLunch;
         }
+    }
+
+    @Override
+    public void withdrawMoney(int amount) {
+        bonus += 2;
+        super.withdrawMoney(amount);
     }
 }

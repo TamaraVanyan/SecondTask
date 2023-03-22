@@ -12,6 +12,11 @@ public class Main {
         businessCard.increaseLimit(); //it's not increase balanse second time
         businessCard.withdrawMoney(200000);
         System.out.println("Business card balance: " + businessCard.getBalance());
+        //second task
+        System.out.println("______________________");
+        businessCard.makeOnlinePurchase(5000);
+        System.out.println("Your cashback from online purchase: " + businessCard.getAddCashback());
+        System.out.println("-----------------------");
 
 
         Gold goldCard = new Gold();
@@ -21,8 +26,11 @@ public class Main {
         goldCard.payForLunch(8000);
         goldCard.withdrawMoney(15000);
         goldCard.payForLunch(8700);
+        System.out.println(goldCard.getBalance());
         System.out.println("Gold card fixed balance after payning for lunch: " + goldCard.getFixedAccount());
         System.out.println("Gold card balance: " + goldCard.getBalance());
+        System.out.println("_____________________________");
+        System.out.println("Your bonus is: " + goldCard.getBonus());
     }
 
 }

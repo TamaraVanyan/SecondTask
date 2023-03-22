@@ -33,4 +33,18 @@ public class BankCard {
             balance -= amount;
         }
     }
+    //second task
+    public void makeOnlinePurchase(int amount) {
+        if (amount > balance) {
+            System.out.println("Not enough balance");
+            System.exit(2);
+        } else if (balance < 0) {
+            System.out.println("Negative balance");
+            System.exit(2);
+        } else if (balance == 0) {
+            System.out.println("Your balance is 0");
+        } else {
+            balance -= amount;
+        }
+    }
 }
