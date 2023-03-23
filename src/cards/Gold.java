@@ -4,8 +4,8 @@ public class Gold extends BankCard {
     private int fixedAccount;
     private int bonus = 0;
 
-    public Gold() {
-        super("Gold");
+    public Gold(String name, String surname, String cardNumber, int expirationYear, String cardType) {
+        super(name, surname, cardNumber, expirationYear, cardType);
         fixedAccount = 100000;
         this.bonus = bonus;
     }
@@ -32,5 +32,10 @@ public class Gold extends BankCard {
     public void withdrawMoney(int amount) {
         bonus += 2;
         super.withdrawMoney(amount);
+    }
+    //third task
+    @Override
+    public String dataAboutCard() {
+        return getName() + " " + getSurname() + " - " + getCardNumber() + " - " + getExpirationYear() + " - " + getCardType();
     }
 }
