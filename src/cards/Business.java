@@ -26,9 +26,10 @@ public class Business extends BankCard {
         addCashback += (amount * 10 / 100);
         super.makeOnlinePurchase(amount);
     }
+
     //third task
     @Override
-    public String dataAboutCard() {
-        return getName() + "  " + getSurname() + "   " + getCardNumber() + " - " + getExpirationYear() + " - " + getCardType();
+    public String toString() {
+        return getName() + " " + getSurname() + " - " + getCardNumber() + " - " + getExpirationYear() + " - " + getCardType();
     }
 }

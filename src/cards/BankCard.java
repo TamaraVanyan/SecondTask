@@ -93,8 +93,4 @@ public class BankCard {
             balance -= amount;
         }
     }
-    //third task
-    public String dataAboutCard() {
-        return getName() + getSurname() + getCardNumber() + getExpirationYear() + getCardType();
-    }
 }

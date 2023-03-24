@@ -33,9 +33,10 @@ public class Gold extends BankCard {
         bonus += 2;
         super.withdrawMoney(amount);
     }
+
     //third task
     @Override
-    public String dataAboutCard() {
+    public String toString() {
         return getName() + " " + getSurname() + " - " + getCardNumber() + " - " + getExpirationYear() + " - " + getCardType();
     }
 }

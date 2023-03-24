@@ -17,7 +17,7 @@ public class Main {
         businessCard.makeOnlinePurchase(5000);
         System.out.println("Your cashback from online purchase: " + businessCard.getAddCashback());
         //third task
-        System.out.println(businessCard.dataAboutCard());
+        System.out.println(businessCard);
         System.out.println("-----------------------");
 
 
@@ -34,8 +34,6 @@ public class Main {
         System.out.println("_____________________________");
         System.out.println("Your bonus is: " + goldCard.getBonus());
         //third task
-        System.out.println(goldCard.dataAboutCard());
-
+        System.out.println(goldCard);
     }
-
 }
