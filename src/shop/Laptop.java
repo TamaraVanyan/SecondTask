@@ -5,7 +5,6 @@ public class Laptop extends Product {
     private String brand;
     private int ram;
     private double screenSize;
-
     public Laptop(String name, double costPrice, double sellingPrice, String model, String brand, int ram, double screenSize) {
         super(name, costPrice, sellingPrice);
         this.model = model;
@@ -30,7 +29,7 @@ public class Laptop extends Product {
         this.brand = brand;
     }
 
-    public int getRam() {
+    public int getRam()  {
         return ram;
     }
 

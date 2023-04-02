@@ -25,8 +25,10 @@ public class Mobile extends Product {
     public void setBrand(String brand) {
         this.brand = brand;
     }
+
     @Override
     public void showDetails() {
-        System.out.println("Mobile: " + getName() + " | Brand: " + brand + " | Model: " + model  + " | Selling Price: " + getSellingPrice());
+        // System.out.println("Mobile: " + getName() + " | Brand: " + brand + " | Model: " + model  + " | Selling Price: " + getSellingPrice());
+        System.out.printf("Mobile: %s | Brand: %s | Model: %s | Selling Price: %.2f%n", getName(), brand, model, getSellingPrice());
     }
 }
