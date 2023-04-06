@@ -1,13 +1,11 @@
 package shop;
 
-public class Mobile extends Product {
+public abstract class Mobile extends Product {
     private String model;
-    private String brand;
 
-    public Mobile(String name, double costPrice, double sellingPrice, String model, String brand) {
-        super(name, costPrice, sellingPrice);
+    public Mobile(String name, String model, double costPrice) {
+        super(name, costPrice);
         this.model = model;
-        this.brand = brand;
     }
 
     public String getModel() {
@@ -17,18 +15,8 @@ public class Mobile extends Product {
     public void setModel(String model) {
         this.model = model;
     }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
     @Override
-    public void showDetails() {
-        // System.out.println("Mobile: " + getName() + " | Brand: " + brand + " | Model: " + model  + " | Selling Price: " + getSellingPrice());
-        System.out.printf("Mobile: %s | Brand: %s | Model: %s | Selling Price: %.2f%n", getName(), brand, model, getSellingPrice());
+    public double calculateProfit() {
+        return getSellingPrice() - getCostPrice();
     }
 }

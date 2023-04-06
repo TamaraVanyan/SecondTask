@@ -4,14 +4,13 @@ public abstract class Product {
     private String name;
     private double costPrice;
     private double sellingPrice;
-    private double balance = 10000000;
-    public static int count = 0;
-    public static double totalRevenue = 0;
+    private int quantity;
 
-    public Product(String name, double costPrice, double sellingPrice) {
+    public Product(String name, double costPrice) {
         this.name = name;
         this.costPrice = costPrice;
         this.sellingPrice = sellingPrice;
+        this.quantity = quantity;
     }
 
     public String getName() {
@@ -22,6 +21,7 @@ public abstract class Product {
         this.name = name;
     }
 
+
     public double getCostPrice() {
         return costPrice;
     }
@@ -30,34 +30,43 @@ public abstract class Product {
         this.costPrice = costPrice;
     }
 
-    public double getSellingPrice() {
+    public abstract void showDetails();
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public void decreaseQuantity() {
+        quantity--;
+        if (quantity == 0) {
+            System.out.println("Out of stock: " + name);
+        }
+    }
+
+    public double marja(double marja) {
+        double per = (marja * getCostPrice()) / 100;
+        sellingPrice = getCostPrice() + per;
         if (sellingPrice < 0) {
             System.out.println("Selling prise can't bee negative");
             System.exit(2);
         }
         return sellingPrice;
-
     }
 
     public void setSellingPrice(double sellingPrice) {
         this.sellingPrice = sellingPrice;
     }
 
-    public abstract void showDetails();
+    public double getSellingPrice() {
 
-    public double payWithCard(double sellingPrice) {
-        double profit = sellingPrice - costPrice;
-        if (balance >= sellingPrice) {
-            balance -= sellingPrice;
-            totalRevenue += profit;
-            count++;
-            System.out.println("Payment successful!");
-        } else {
-            System.out.println("Insufficient balance!");
-        }
-        return profit;
+        return sellingPrice;
     }
-    public static double calculateTotalRevenue() {
-        return totalRevenue;
+
+    public double calculateProfit() {
+        return getSellingPrice() - getCostPrice();
     }
 }

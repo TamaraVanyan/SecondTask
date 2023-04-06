@@ -1,14 +1,13 @@
 package shop;
 
-public class Laptop extends Product {
+public abstract class Laptop extends Product {
     private String model;
-    private String brand;
     private int ram;
     private double screenSize;
-    public Laptop(String name, double costPrice, double sellingPrice, String model, String brand, int ram, double screenSize) {
-        super(name, costPrice, sellingPrice);
+
+    public Laptop(String name, double costPrice, String model, int ram, double screenSize) {
+        super(name, costPrice);
         this.model = model;
-        this.brand = brand;
         this.ram = ram;
         this.screenSize = screenSize;
     }
@@ -21,15 +20,8 @@ public class Laptop extends Product {
         this.model = model;
     }
 
-    public String getBrand() {
-        return brand;
-    }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public int getRam()  {
+    public int getRam() {
         return ram;
     }
 
@@ -53,8 +45,7 @@ public class Laptop extends Product {
         }
     }
     @Override
-    public void showDetails() {
-        System.out.println("Product: " + getName() + " | Brand: " + getBrand() + " | Model: " + getModel() + " | RAM: " +
-                getRam() + "GB | Screen size: " + getScreenSize());
+    public double calculateProfit() {
+        return getSellingPrice() - getCostPrice();
     }
 }

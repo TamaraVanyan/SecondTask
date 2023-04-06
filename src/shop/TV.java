@@ -2,14 +2,12 @@ package shop;
 
 public class TV extends Product {
     private String model;
-    private String brand;
     private double screenSize;
     private boolean isSmart;
 
-    public TV(String name, double costPrice, double sellingPrice, String model, String brand, double screenSize, boolean isSmart) {
-        super(name, costPrice, sellingPrice);
+    public TV(String name, double costPrice, String model, double screenSize, boolean isSmart) {
+        super(name, costPrice);
         this.model = model;
-        this.brand = brand;
         this.screenSize = screenSize;
         this.isSmart = isSmart;
     }
@@ -20,14 +18,6 @@ public class TV extends Product {
 
     public void setModel(String model) {
         this.model = model;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
     }
 
     public double getScreenSize() {
@@ -45,9 +35,15 @@ public class TV extends Product {
     public void setSmart(boolean smart) {
         isSmart = smart;
     }
+
+    @Override
+    public double calculateProfit() {
+        return getSellingPrice() - getCostPrice();
+    }
+
     @Override
     public void showDetails() {
-        System.out.println("Product: " + getName() + " | Brand: " + getBrand() + " | Model: " + getModel() + " | Screen size: " +
-                getScreenSize() + " inches | Smart TV: " + isSmart());
+        System.out.println("Product: " + getName() + " | Model: " + getModel() + " | Screen size: " +
+                getScreenSize() + " | Smart TV: " + isSmart() + " selling price: " + marja(8.5));
     }
 }
